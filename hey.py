@@ -40,7 +40,7 @@ class MyStreamListener(tweepy.StreamListener):
             print("already seen this tweet: ", status.text)
         else:
             
-            time.sleep(60)
+            time.sleep(60*12)
 
             self.api.update_status(message,in_reply_to_status_id=tweet_id, auto_populate_reply_metadata=True)
             
