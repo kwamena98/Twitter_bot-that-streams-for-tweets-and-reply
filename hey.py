@@ -39,11 +39,11 @@ class MyStreamListener(tweepy.StreamListener):
         if tweet_id in self.replied_tweets:
             print("already seen this tweet: ", status.text)
         else:
-            like(tweet_id)
+            
             time.sleep(60)
 
             self.api.update_status(message,in_reply_to_status_id=tweet_id, auto_populate_reply_metadata=True)
-            self.api.create_friendship(follow_id)
+            
             
             print("==========================================================")
             self.replied_tweets.append(tweet_id)
@@ -51,10 +51,7 @@ class MyStreamListener(tweepy.StreamListener):
         if len(self.replied_tweets) >= 1000:
             self.replied_tweets = []
     
-# tweets = api.mentions_timeline()
-# for tweet in tweets:
-#     tweet.favorite()
-#     tweet.user.follow()
+
 if __name__ == "__main__":
     tweets_listener = MyStreamListener(api)
     stream = tweepy.Stream(api.auth, tweets_listener)
