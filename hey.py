@@ -5,10 +5,10 @@ import time
 # Authenticate to Twitter
 
 
-API_KEY="jaW4GED9lysHSasdasdasd"
-API_SECRET="ckQtRzOmxGNVypusHdsoNRKopoJwVPfuJp2gBOlqQLXzJ29mcc"
-ACCESS_TOKEN = "1314162034972390123891239"
-ACCESS_SECRET = "IOft4tehP114kkh21jshdajsdAKE1Utbj"
+API_KEY="#"
+API_SECRET="#"
+ACCESS_TOKEN = "#"
+ACCESS_SECRET = "#"
 
 
 
