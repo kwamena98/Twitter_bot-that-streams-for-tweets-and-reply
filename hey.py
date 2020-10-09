@@ -58,5 +58,5 @@ if __name__ == "__main__":
     tweets_listener = MyStreamListener(api)
     stream = tweepy.Stream(api.auth, tweets_listener)
     print("streaming...")
-    stream.filter(track=['qwerty2020am'], languages=["en"])
+    stream.filter(track=['qwerty2020am'])
     print("after stream...")
