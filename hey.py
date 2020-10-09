@@ -36,7 +36,7 @@ class MyStreamListener(tweepy.StreamListener):
         print("==========================================================")
         
         follow_id=(status.user.id)
-        message="You need a ride."
+        message="Hi what's up"
         tweet_id=status.id
         if tweet_id in self.replied_tweets:
             print("already seen this tweet: ", status.text)
@@ -58,5 +58,5 @@ if __name__ == "__main__":
     tweets_listener = MyStreamListener(api)
     stream = tweepy.Stream(api.auth, tweets_listener)
     print("streaming...")
-    stream.filter(track=['Uber', 'ubereats', 'ubersupport', 'uberuk','ubersupportuk'], languages=["en"])
+    stream.filter(track=['qwerty2020am'], languages=["en"])
     print("after stream...")
