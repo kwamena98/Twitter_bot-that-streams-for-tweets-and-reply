@@ -4,10 +4,12 @@ import time
 
 # Authenticate to Twitter
 
-API_KEY="XxUAkAiKE0FqCfpFBDvXDzDZ2"
-API_SECRET="OIMYimUCKPmbCUTNf3mnfAWzRW75kssEjJcVs45FKTxwmF5ZI1"
-ACCESS_TOKEN = "48283064-IoOLNMwNNHhzopFi7kZY7BiX2bfm0jx0rKPPqF9yc"
-ACCESS_SECRET = "OehIYKlN9bqfbIApT4Ad4ZSamBFeqBSzSqVwI4JxZ1X44"
+
+API_KEY="jaW4GED9lysHSW509u0Qv0onc"
+API_SECRET="ckQtRzOmxGNVypusHdsoNRKopoJwVPfuJp2gBOlqQLXzJ29mcc"
+ACCESS_TOKEN = "AAAAAAAAAAAAAAAAAAAAAHa9IQEAAAAA1bGtlHfnv%2FpSll7Xi%2BwHhgf5cx0$
+ACCESS_SECRET = "ehSuCw4XNISGEMZ13LZsNCy3FocYC0cb6c0niwHSmqUSd"
+
 
 
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
@@ -34,13 +36,13 @@ class MyStreamListener(tweepy.StreamListener):
         print("==========================================================")
         
         follow_id=(status.user.id)
-        message="Hey I liked this tweet of yours. We have an active opening for fullstack Engineers. Please DM me; will provide all details t.ly/4diY,and/or if you can support me by retweeting this or spread the word I will be thankful.Show your support pls."
+        message="You need a ride."
         tweet_id=status.id
         if tweet_id in self.replied_tweets:
             print("already seen this tweet: ", status.text)
         else:
             
-            time.sleep(60*12)
+            time.sleep(10)
 
             self.api.update_status(message,in_reply_to_status_id=tweet_id, auto_populate_reply_metadata=True)
             
@@ -56,5 +58,5 @@ if __name__ == "__main__":
     tweets_listener = MyStreamListener(api)
     stream = tweepy.Stream(api.auth, tweets_listener)
     print("streaming...")
-    stream.filter(track=['javatype','typescript', 'vue', 'vuejs', 'vue3', 'tailwindcss', 'javascript'], languages=["en"])
+    stream.filter(track=['Uber', 'ubereats', 'ubersupport', 'uberuk','ubersupportuk'], languages=["en"])
     print("after stream...")
