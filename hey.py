@@ -1,3 +1,6 @@
+import tweepy
+import time
+
 
 API_KEY="#"
 API_SECRET="#"
