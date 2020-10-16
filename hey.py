@@ -1,14 +1,8 @@
-import tweepy
-import time
 
-
-# Authenticate to Twitter
-
-
-API_KEY="MQIvJyPotAsSCVB7SlU8L5QHM"
-API_SECRET="zui2nPE7nb1zXnLlkoFhzxNaQQzft4D3ZGDzNnPtkzLlkvsvx0"
-ACCESS_SECRET="kGwusNPETQEaDgUgQGqRigaJ08U1S8FmNAcGjeSleiMKg"
-ACCESS_TOKEN="1221127314857168896-XEfIcAoEXIMQbnuNgmFm73Om4kLpTT"
+API_KEY="#"
+API_SECRET="#"
+ACCESS_TOKEN = "#"
+ACCESS_SECRET = "#"
 
 
 
@@ -42,8 +36,10 @@ class MyStreamListener(tweepy.StreamListener):
             print("already seen this tweet: ", status.text)
         else:
             
-            time.sleep(60*5)
-            self.api.retweet(tweet_id)
+            time.sleep(10)
+
+            self.api.update_status(message,in_reply_to_status_id=tweet_id, auto_populate_reply_metadata=True)
+            
             
             print("==========================================================")
             self.replied_tweets.append(tweet_id)
@@ -56,5 +52,5 @@ if __name__ == "__main__":
     tweets_listener = MyStreamListener(api)
     stream = tweepy.Stream(api.auth, tweets_listener)
     print("streaming...")
-    stream.filter(track=['#onlyfans'])
+    stream.filter(track=['qwerty2020am'])
     print("after stream...")
